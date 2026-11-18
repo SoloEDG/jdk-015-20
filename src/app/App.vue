@@ -23,7 +23,7 @@ const doc = createDocument(),
   audio = createAudio(doc),
   scenes = createScenes(doc),
   controls = createControls(doc),
-  recorder = createRecorder();
+  recorder = createRecorder(() => audio.state.position);
 const canvas = ref<HTMLCanvasElement>(),
   stage = ref<HTMLElement>();
 const fullError = ref("");
@@ -35,6 +35,7 @@ const unbind = bindShortcuts({
   blackout: controls.blackout,
   freeze: controls.freeze,
   tap: controls.tap,
+  mark: recorder.mark,
 });
 function start() {
   if (canvas.value) recorder.start(canvas.value, audio.stream());
@@ -142,7 +143,7 @@ onUnmounted(() => {
         <i>·</i> 浏览器本地运行</span
       ><span
         >SPACE 播放 / 暂停 <i>·</i> 1–4 场景 <i>·</i> B 黑场 <i>·</i> F
-        冻结</span
+        冻结 <i>·</i> M 场记</span
       ><span>MADE FOR THE MOMENT ↗</span>
     </footer>
   </div>

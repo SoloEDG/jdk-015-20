@@ -8,6 +8,9 @@ export function recordingMime() {
     ].find((t) => MediaRecorder.isTypeSupported(t)) ?? ""
   );
 }
-export function takeName(mime: string) {
-  return `Resonance-${new Date().toISOString().replace(/[:.]/g, "-")}.${mime.includes("mp4") ? "mp4" : "webm"}`;
+export function takeName(mime: string, mode: "cut" | "full" = "cut") {
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const ext = mime.includes("mp4") ? "mp4" : "webm";
+  const suffix = mode === "full" ? "LIVE" : "CUT";
+  return `Resonance-${stamp}-${suffix}.${ext}`;
 }

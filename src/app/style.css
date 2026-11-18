@@ -670,6 +670,93 @@ input[type="checkbox"] {
   font: 20px "Space Grotesk";
   color: #8a8299;
 }
+.record-clock.paused {
+  color: #e2c07f;
+}
+.record-clocks {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 9px;
+  color: #6f7180;
+  margin-bottom: 14px;
+}
+.record-clocks b {
+  color: #b9b3cc;
+  font-weight: 500;
+}
+.record-clocks i {
+  color: #e2c07f;
+  margin-left: 5px;
+}
+.record-actions {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.record-actions .record-button {
+  margin-bottom: 0;
+}
+.mark-button,
+.stop-button {
+  font-size: 10px;
+  padding: 12px 10px;
+}
+.stop-button {
+  background: #5b2f3a;
+  color: #ffc7d2;
+  border-color: #6e3946;
+}
+.live-cues {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 4px 0 10px;
+  max-height: 132px;
+  overflow-y: auto;
+}
+.live-cues small,
+.take-cues .cue {
+  font-size: 9px;
+  line-height: 1.5;
+  padding: 4px 7px;
+  border-radius: 4px;
+  border: 1px solid #2c2a38;
+  background: #181722;
+}
+.live-cues small.kept,
+.cue.kept {
+  color: #a9d9b8;
+}
+.live-cues small.cut,
+.cue.cut {
+  color: #e2a98a;
+  border-color: #4a3326;
+}
+.take-body {
+  flex: 1;
+  min-width: 0;
+}
+.take-cues {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 7px 0;
+}
+.take-downloads {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.take-downloads button {
+  font-size: 9px;
+  padding: 7px 9px;
+}
+.take-remove {
+  margin-left: auto;
+}
 .record-button {
   width: 100%;
   background: #c1aaf3;

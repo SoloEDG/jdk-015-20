@@ -4,6 +4,7 @@ export function bindShortcuts(actions: {
   blackout: () => void;
   freeze: () => void;
   tap: () => void;
+  mark: () => void;
 }) {
   const handler = (e: KeyboardEvent) => {
     if (
@@ -21,6 +22,7 @@ export function bindShortcuts(actions: {
     if (e.key.toLowerCase() === "b") actions.blackout();
     if (e.key.toLowerCase() === "f") actions.freeze();
     if (e.key.toLowerCase() === "t") actions.tap();
+    if (e.key.toLowerCase() === "m") actions.mark();
   };
   window.addEventListener("keydown", handler);
   return () => window.removeEventListener("keydown", handler);
